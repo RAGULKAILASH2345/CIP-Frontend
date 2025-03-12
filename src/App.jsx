@@ -1,10 +1,9 @@
-import React from 'react'
 import { lazy } from 'react'
 import "./App.css";
-import {BrowserRouter as Router,Routes,Route,Navigate} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 
 const Home = lazy(()=>import("./components/Home/Home"));
-const IndiCard = lazy(()=>import("./components/IndiCard/IndiCard"))
+const IndividualCard = lazy(()=>import("./components/IndiCard/IndividualCard"))
 
 function App() {
 
@@ -12,7 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Individual" element={<IndiCard />}></Route>
+        <Route path="/Individual" element={<IndividualCard />}></Route>
       </Routes>
     </Router>
   )
