@@ -57,7 +57,7 @@ setStation({ ...response.data, location: { lat, lng } });
   return (
     <div>
       <div className="flex justify-center items-center h-screen">
-        <Card className="max-w-sm rounded-t-lg" imgAlt="CCTV Footage" imgSrc="./images/CCTVFight4.png">
+        <Card className="max-w-sm rounded-t-lg m-[25px] md:m-auto" imgAlt="CCTV Footage" imgSrc="./images/CCTVFight4.png">
           <div className="flex-col justify-between items-center w-full max-w-3xl mx-auto">
             <div className="flex m-2 items-center justify-center">
               <button
