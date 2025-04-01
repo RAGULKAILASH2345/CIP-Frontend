@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ image, location }) => {
+const Card = ({ image, location, threatId }) => {
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate(`/individual-card/${threatId}`);
+  };
+
   return (
     <div className="relative w-80 bg-white bg-[url('https://www.transparenttextures.com/patterns/checkered-pattern.png')] rounded-2xl overflow-hidden shadow-lg p-4">
       <div className="w-full h-48 flex justify-center items-center bg-black rounded-lg overflow-hidden">
@@ -9,8 +16,13 @@ const Card = ({ image, location }) => {
       <div className="text-center mt-4">
         <h2 className="text-[#346c9b] text-xl font-bold">THREAT</h2>
         <p className="text-[#74acec] text-lg">Has been Detected</p>
-        <span className="block bg-[#75d406] text-white text-sm font-bold px-3 py-1 mt-2 rounded-md">{location}</span>
-        <button className=" transform w-full bg-[#75d406] text-white font-bold py-2 mt-3 rounded-lg hover:bg-[#10d406e6] transition duration-500 hover:scale-105">
+        <span className="block bg-[#75d406] text-white text-sm font-bold px-3 py-1 mt-2 rounded-md">
+          {location}
+        </span>
+        <button
+          onClick={handleViewDetails}
+          className="transform w-full bg-[#75d406] text-white font-bold py-2 mt-3 rounded-lg hover:bg-[#10d406e6] transition duration-500 hover:scale-105"
+        >
           View Details
         </button>
       </div>
